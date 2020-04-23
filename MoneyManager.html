@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="H:\Web-Development\Dicee Challenge - Completed\images\MoneyManagerWebsite\moneymangaer.css">
+    <link rel="stylesheet" href="/Users/varshaa/Desktop/varsha/tut/MMan-dev/MoneyManager.css">
     <title>Money Manager</title>
 </head>
 <body>
@@ -52,6 +52,96 @@
 
 <!----------------------------- Earning Section End ------------------------------------>
 
+<!----------------------------- Expenses section starts ----------------------------------->
+
+<h2>Expenses</h2>
+   
+<div class="loans">
+
+  <div class="loanSection">
+      <label>Loan Repayments</label>
+      <input type="text" name="Loan Name" placeholder='Name'>
+      <input type='number' name='Amount' placeholder='Amount'>
+      <select id='currencyList'> <option value='USD' selected='selected' label='Indian rupee'>INR</option> <option value='IDR' label='Indonesian rupiah'>IDR</option> <option value='ILS' label='Israeli new shekel'>ILS</option> <option value='INR' label='Indian rupee'>INR</option> <option value='LKR' label='Sri Lankan rupee'>LKR</option> <option value='MRU' label='Mauritanian ouguiya'>MRU</option> <option value='MUR' label='Mauritian rupee'>MUR</option> <option value='MVR' label='Maldivian rufiyaa'>MVR</option> <option value='NZD' label='New Zealand dollar'>NZD</option> <option value='SGD' label='Singapore dollar'>SGD</option> <option value='USD' label='United States dollar'>USD</option> </select>
+      <input type='date' name='Date'>
+  </div>
+  <button class="loadAddBtn">+</button>
+
+</div>
+
+<div class="rents">
+    
+  <div class="rentSection">
+      <label>Rent payments</label>
+      <input type='text' name='Rent Property' placeholder='Name'>
+      <input type='number' name='Amount' placeholder='Amount'>
+      <select id='currencyList'> <option value='USD' selected='selected' label='Indian rupee'>INR</option> <option value='IDR' label='Indonesian rupiah'>IDR</option> <option value='ILS' label='Israeli new shekel'>ILS</option> <option value='INR' label='Indian rupee'>INR</option> <option value='LKR' label='Sri Lankan rupee'>LKR</option> <option value='MRU' label='Mauritanian ouguiya'>MRU</option> <option value='MUR' label='Mauritian rupee'>MUR</option> <option value='MVR' label='Maldivian rufiyaa'>MVR</option> <option value='NZD' label='New Zealand dollar'>NZD</option> <option value='SGD' label='Singapore dollar'>SGD</option> <option value='USD' label='United States dollar'>USD</option> </select>
+      <input type='date' name='Date'>
+  </div>
+  <button class="rentAddBtn">+</button>
+</div>
+
+<div class="groceries">
+    
+  <div class="groceriesSection">
+      <label>Groceries</label>
+      <input type='text' name='Groceries' placeholder='Name'>
+      <input type='number' name='Amount' placeholder='Amount'>
+      <select id='currencyList'> <option value='USD' selected='selected' label='Indian rupee'>INR</option> <option value='IDR' label='Indonesian rupiah'>IDR</option> <option value='ILS' label='Israeli new shekel'>ILS</option> <option value='INR' label='Indian rupee'>INR</option> <option value='LKR' label='Sri Lankan rupee'>LKR</option> <option value='MRU' label='Mauritanian ouguiya'>MRU</option> <option value='MUR' label='Mauritian rupee'>MUR</option> <option value='MVR' label='Maldivian rufiyaa'>MVR</option> <option value='NZD' label='New Zealand dollar'>NZD</option> <option value='SGD' label='Singapore dollar'>SGD</option> <option value='USD' label='United States dollar'>USD</option> </select>
+      <input type='date' name='Date'>
+  </div>
+  <button class="groceriesAddBtn">+</button>
+</div>
+
+<div class="bills">
+    
+  <div class="billSection">
+      <label>Bill payments</label>
+      <input type='text' name='Bill Name' placeholder='Name'>
+      <input type='number' name='Amount' placeholder='Amount'>
+      <select id='currencyList'> <option value='USD' selected='selected' label='Indian rupee'>INR</option> <option value='IDR' label='Indonesian rupiah'>IDR</option> <option value='ILS' label='Israeli new shekel'>ILS</option> <option value='INR' label='Indian rupee'>INR</option> <option value='LKR' label='Sri Lankan rupee'>LKR</option> <option value='MRU' label='Mauritanian ouguiya'>MRU</option> <option value='MUR' label='Mauritian rupee'>MUR</option> <option value='MVR' label='Maldivian rufiyaa'>MVR</option> <option value='NZD' label='New Zealand dollar'>NZD</option> <option value='SGD' label='Singapore dollar'>SGD</option> <option value='USD' label='United States dollar'>USD</option> </select>
+      <input type='date' name='Date'>
+  </div>
+  <button class="billAddBtn">+</button>
+</div>
+
+<div class="medicine">
+    
+  <div class="medicineSection">
+      <label>Medicines</label>
+      <input type='text' name='Medicine' placeholder='Name'>
+      <input type='number' name='Amount' placeholder='Amount'>
+      <select id='currencyList'> <option value='USD' selected='selected' label='Indian rupee'>INR</option> <option value='IDR' label='Indonesian rupiah'>IDR</option> <option value='ILS' label='Israeli new shekel'>ILS</option> <option value='INR' label='Indian rupee'>INR</option> <option value='LKR' label='Sri Lankan rupee'>LKR</option> <option value='MRU' label='Mauritanian ouguiya'>MRU</option> <option value='MUR' label='Mauritian rupee'>MUR</option> <option value='MVR' label='Maldivian rufiyaa'>MVR</option> <option value='NZD' label='New Zealand dollar'>NZD</option> <option value='SGD' label='Singapore dollar'>SGD</option> <option value='USD' label='United States dollar'>USD</option> </select>
+      <input type='date' name='Date'>
+  </div>
+  <button class="medicineAddBtn">+</button>
+</div>
+
+<div class="travel">
+    
+  <div class="travelSection">
+      <label>Travel Expenses</label>
+      <input type='text' name='Travel' placeholder='Name'>
+      <input type='number' name='Amount' placeholder='Amount'>
+      <select id='currencyList'> <option value='USD' selected='selected' label='Indian rupee'>INR</option> <option value='IDR' label='Indonesian rupiah'>IDR</option> <option value='ILS' label='Israeli new shekel'>ILS</option> <option value='INR' label='Indian rupee'>INR</option> <option value='LKR' label='Sri Lankan rupee'>LKR</option> <option value='MRU' label='Mauritanian ouguiya'>MRU</option> <option value='MUR' label='Mauritian rupee'>MUR</option> <option value='MVR' label='Maldivian rufiyaa'>MVR</option> <option value='NZD' label='New Zealand dollar'>NZD</option> <option value='SGD' label='Singapore dollar'>SGD</option> <option value='USD' label='United States dollar'>USD</option> </select>
+      <input type='date' name='Date'>
+  </div>
+  <button class="travelAddBtn">+</button>
+</div>
+
+<div class="restaurants">
+    
+  <div class="restaurantsSection">
+      <label>Restaurant Bills</label>
+      <input type='text' name='Restaurants' placeholder='Name'>
+      <input type='number' name='Amount' placeholder='Amount'>
+      <select id='currencyList'> <option value='USD' selected='selected' label='Indian rupee'>INR</option> <option value='IDR' label='Indonesian rupiah'>IDR</option> <option value='ILS' label='Israeli new shekel'>ILS</option> <option value='INR' label='Indian rupee'>INR</option> <option value='LKR' label='Sri Lankan rupee'>LKR</option> <option value='MRU' label='Mauritanian ouguiya'>MRU</option> <option value='MUR' label='Mauritian rupee'>MUR</option> <option value='MVR' label='Maldivian rufiyaa'>MVR</option> <option value='NZD' label='New Zealand dollar'>NZD</option> <option value='SGD' label='Singapore dollar'>SGD</option> <option value='USD' label='United States dollar'>USD</option> </select>
+      <input type='date' name='Date'>
+  </div>
+  <button class="restaurantsAddBtn">+</button>
+</div>
+
+<!-- Expenses section ends -->
 
  <!---------------------------- Saving Section Start------------------------------------------>
  
@@ -144,6 +234,6 @@
 <p class="demo3"></p>
 <!---------------------------- Saving Section End------------------------------------------>
 
-<script src="H:\Web-Development\Dicee Challenge - Completed\images\MoneyManagerWebsite\moneymanager.js"></script> 
+<script src="/Users/varshaa/Desktop/varsha/tut/MMan-dev/MoneyManager.js"></script> 
 </body>
 </html>
