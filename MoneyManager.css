@@ -1,0 +1,14 @@
+body{
+    margin: 0 0 0 0 ;
+
+    /* padding: 0 0; */
+
+}
+.mainheading{
+    background-color: bisque;
+    font-size: 1rem;
+}
+h1{
+    margin: 0;
+    text-align: center;
+}
