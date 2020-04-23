@@ -3,54 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Users/varshaa/Desktop/varsha/tut/MMan-dev/MoneyManager.css">
+    <link rel="stylesheet" href="H:\Web-Development\Dicee Challenge - Completed\images\MoneyManagerWebsite\moneymangaer.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Money Manager</title>
 </head>
 <body>
     <div class="mainheading"><h1> Money Manager</h1>
     <h3>Month</h3></div>
 
-<!----------------------------- Earning Section Start----------------------->
+<!--------------------------------------------------------- Earning Section Start------------------------------------------------------------->
 
+    
+<div class="earning">
     <h2>Earnings</h2>
-    <div> 
-        <label>Salary</label>
-        <input type="number"></input>
-        <select class="currency-selector">
-        <option selected>Select Currency</option>
-        <option>INR</option>
-        <option>USD</option>
-        <option>EUR</option>
-        <option>GBP</option>
-        <option>JPY</option>
-        <option>CAD</option>
-        <option>AUD</option>
-        <option>INR</option>
-         </select>
-         <label>Date</label>
-         <input type="date">
-    </div>
-    <br>
 
-    <div> 
-        <label>Others</label>
-        <input type="number"></input>
-        <select class="currency-selector">
-        <option selected>Select Currency</option>
-        <option data-symbol="₹">INR</option>
-        <option data-symbol="$">USD</option>
-        <option data-symbol="€">EUR</option>
-        <option data-symbol="£" >GBP</option>
-        <option data-symbol="¥">JPY</option>
-        <option data-symbol="$">CAD</option>
-        <option data-symbol="$">AUD</option>
-        <option data-symbol="₹">INR</option>
-         </select>
-         <label>Date</label>
-         <input type="date">
-    </div>
+                                 <!-----------------------Salary Field --------------------------->
+ <table class="earnings_table">
+        <tr>
+            <td> <label>Salary</label></td>
+            <td><input type="text" placeholder="Name"></td>
+            <td><input type="number" placeholder="Amount"></input></td>
+            <td><select class="currency-selector">
+                <option selected>Select Currency</option>
+                <option>INR</option>
+                <option>USD</option>
+                <option>EUR</option>
+                <option>GBP</option>
+                <option>JPY</option>
+                <option>CAD</option>
+                <option>AUD</option>
+                <option>INR</option>
+                 </select></td>
+            <td><label>Date</label>
+                <input type="date"></td>
+        </tr>
 
-<!----------------------------- Earning Section End ------------------------------------>
+                              <!------------------------ Others Field ------------------------------->
+        <tr>
+            <td><label>Others</label></td>
+            <td><input type="text" placeholder="Name"></td>
+            <td><input type="number" placeholder="Amount"></input></td>
+            <td><select class="currency-selector">
+                <option selected>Select Currency</option>
+                <option>INR</option>
+                <option>USD</option>
+                <option>EUR</option>
+                <option>GBP</option>
+                <option>JPY</option>
+                <option>CAD</option>
+                <option>AUD</option>
+                <option>INR</option>
+                 </select></td>
+            <td><label>Date</label>
+                <input type="date"></td>
+        </tr>
+    </table>
+    </div>
+  
+<!---------------------------------------------------------- Earning Section End --------------------------------------------------------------->
 
 <!----------------------------- Expenses section starts ----------------------------------->
 
@@ -143,97 +153,120 @@
 
 <!-- Expenses section ends -->
 
- <!---------------------------- Saving Section Start------------------------------------------>
+<!---------------------------------------------------------- Saving Section Start---------------------------------------------------------------->
  
- <h2> Savings </h2>
- <div> 
-    <label>LIC</label>
-    <input type="text" placeholder="Name"></input>
-    <input type="number" placeholder="Amount"></input>
-    <select class="currency-selector">
-    <option selected>Select Currency</option>
-    <option data-symbol="₹">INR</option>
-    <option data-symbol="$">USD</option>
-    <option data-symbol="€">EUR</option>
-    <option data-symbol="£" >GBP</option>
-    <option data-symbol="¥">JPY</option>
-    <option data-symbol="$">CAD</option>
-    <option data-symbol="$">AUD</option>
-    <option data-symbol="₹">INR</option>
-     </select>
-     <label>Date</label>
-     <input type="date">
-</div>
-<button id="myBtn">+</button>
-<p class="demo"></p>
+ 
+ <div class="savings"> 
+    <h2> Savings </h2>
 
+                             <!--------------------------------- LIC Field ------------------------->
+   <table>
+         <tr> 
+            <td><label>LIC &nbsp; &nbsp; &nbsp; </label></td>
+            <td><input type="text" placeholder="Name"></input></td>
+            <td> <input type="number" placeholder="Amount"></input> </td>
+            <td> <select class="currency-selector">
+                <option selected>Select Currency</option>
+                <option data-symbol="₹">INR</option>
+                <option data-symbol="$">USD</option>
+                <option data-symbol="€">EUR</option>
+                <option data-symbol="£" >GBP</option>
+                <option data-symbol="¥">JPY</option>
+                <option data-symbol="$">CAD</option>
+                <option data-symbol="$">AUD</option>
+                <option data-symbol="₹">INR</option>
+                 </select> </td>
+            <td><label>Date</label></td>
+            <td><input type="date"></td>
+         </tr>
+   </table>
 
-<div> 
-    <label>FD</label>
-    <input type="text" placeholder="Name"></input>
-    <input type="number" placeholder="Amount"></input>
-    <select class="currency-selector">
-    <option selected>Select Currency</option>
-    <option data-symbol="₹">INR</option>
-    <option data-symbol="$">USD</option>
-    <option data-symbol="€">EUR</option>
-    <option data-symbol="£" >GBP</option>
-    <option data-symbol="¥">JPY</option>
-    <option data-symbol="$">CAD</option>
-    <option data-symbol="$">AUD</option>
-    <option data-symbol="₹">INR</option>
-     </select>
-     <label>Date</label>
-     <input type="date">
-</div>
-<button id="myBtn1">+</button>
-<p class="demo1"></p>
+         <button id="myBtn">+</button>
+         <p class="demo"></p>
+<br>
+                            <!--------------------------------- FD Field ------------------------->       
+    <table>
+        <tr>
+            <td><label>FD &nbsp; &nbsp; &nbsp;</label></td>
+            <td><input type="text" placeholder="Name"></input></td>
+            <td> <input type="number" placeholder="Amount"></input> </td>
+            <td> <select class="currency-selector">
+                <option selected>Select Currency</option>
+                <option data-symbol="₹">INR</option>
+                <option data-symbol="$">USD</option>
+                <option data-symbol="€">EUR</option>
+                <option data-symbol="£" >GBP</option>
+                <option data-symbol="¥">JPY</option>
+                <option data-symbol="$">CAD</option>
+                <option data-symbol="$">AUD</option>
+                <option data-symbol="₹">INR</option>
+                 </select> </td>
+            <td><label>Date</label></td>
+            <td><input type="date"></td>
+        </tr>
+    </table>
 
+    <button id="myBtn1">+</button>
+    <p class="demo1"></p>
+<br>
+                        <!--------------------------------- RD Field ------------------------->
+    <table>
+        <tr>
+            <td><label>RD &nbsp; &nbsp; &nbsp;</label></td>
+            <td><input type="text" placeholder="Name"></input></td>
+            <td> <input type="number" placeholder="Amount"></input> </td>
+            <td> <select class="currency-selector">
+                <option selected>Select Currency</option>
+                <option data-symbol="₹">INR</option>
+                <option data-symbol="$">USD</option>
+                <option data-symbol="€">EUR</option>
+                <option data-symbol="£" >GBP</option>
+                <option data-symbol="¥">JPY</option>
+                <option data-symbol="$">CAD</option>
+                <option data-symbol="$">AUD</option>
+                <option data-symbol="₹">INR</option>
+                 </select> </td>
+            <td><label>Date</label></td>
+            <td><input type="date"></td>
+        </tr>
+    </table>  
+    
+    <button id="myBtn2">+</button>
+    <p class="demo2"></p>
 
-<div> 
-    <label>RD</label>
-    <input type="text" placeholder="Name"></input>
-    <input type="number" placeholder="Amount"></input>
-    <select class="currency-selector">
-    <option selected>Select Currency</option>
-    <option data-symbol="₹">INR</option>
-    <option data-symbol="$">USD</option>
-    <option data-symbol="€">EUR</option>
-    <option data-symbol="£" >GBP</option>
-    <option data-symbol="¥">JPY</option>
-    <option data-symbol="$">CAD</option>
-    <option data-symbol="$">AUD</option>
-    <option data-symbol="₹">INR</option>
-     </select>
-     <label>Date</label>
-     <input type="date">
-</div>
-<button id="myBtn2">+</button>
-<p class="demo2"></p>
+    <br>
+                     <!--------------------------------- Others Field ------------------------->
+    <table>
+         <tr>
+            <td><label>Others</label></td>
+            <td><input type="text" placeholder="Name"></input></td>
+            <td> <input type="number" placeholder="Amount"></input> </td>
+            <td> <select class="currency-selector">
+                <option selected>Select Currency</option>
+                <option data-symbol="₹">INR</option>
+                <option data-symbol="$">USD</option>
+                <option data-symbol="€">EUR</option>
+                <option data-symbol="£" >GBP</option>
+                <option data-symbol="¥">JPY</option>
+                <option data-symbol="$">CAD</option>
+                <option data-symbol="$">AUD</option>
+                <option data-symbol="₹">INR</option>
+                 </select> </td>
+            <td><label>Date</label></td>
+            <td><input type="date"></td>
+         </tr>
+    </table>
 
-
-<div> 
-    <label>Others</label>
-    <input type="text" placeholder="Name"></input>
-    <input type="number" placeholder="Amount"></input>
-    <select class="currency-selector">
-    <option selected>Select Currency</option>
-    <option data-symbol="₹">INR</option>
-    <option data-symbol="$">USD</option>
-    <option data-symbol="€">EUR</option>
-    <option data-symbol="£" >GBP</option>
-    <option data-symbol="¥">JPY</option>
-    <option data-symbol="$">CAD</option>
-    <option data-symbol="$">AUD</option>
-    <option data-symbol="₹">INR</option>
-     </select>
-     <label>Date</label>
-     <input type="date">
-</div>
 <button id="myBtn3">+</button>
 <p class="demo3"></p>
-<!---------------------------- Saving Section End------------------------------------------>
+</div>
 
-<script src="/Users/varshaa/Desktop/varsha/tut/MMan-dev/MoneyManager.js"></script> 
+<!---------------------------------------------------- Saving Section End-------------------------------------------------------------------->
+
+
+<!------------------------------------------------------- Submit Buttom---------------------------------------------------------------------->
+<div class="submitbutton"> 
+    <button type="button" class="btn btn-lg btn-block btn-primary btn-danger btn-lg">Submit</button> </div>
+<script src="H:\Web-Development\Dicee Challenge - Completed\images\MoneyManagerWebsite\moneymanager.js"></script> 
 </body>
 </html>

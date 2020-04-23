@@ -7,8 +7,30 @@ body{
 .mainheading{
     background-color: bisque;
     font-size: 1rem;
+    padding: 2% 20%;
 }
 h1{
     margin: 0;
     text-align: center;
+    font-size: 4rem;
 }
+.earning{                   /*******Earning Section div *********/
+    background-color: aquamarine;
+    padding: 4% 20%;
+}
+.savings{                   /******Savings Section div ***********/
+    background-color:#3498DB ;
+    padding: 4% 20%;  
+}
+h2{
+    font-size: 2.5rem;
+}
+h3{
+    font-size: 2rem;
+}
+.submitbutton{
+    padding: 2% 40%;
+    
+}
+
+
