@@ -16,7 +16,7 @@ h1{
 }
 .earning{                   /*******Earning Section div *********/
     background-color: aquamarine;
-    padding: 4% 20%;
+    padding: 9% 20%;
 }
 .savings{                   /******Savings Section div ***********/
     background-color:#3498DB ;
@@ -24,6 +24,7 @@ h1{
 }
 h2{
     font-size: 2.5rem;
+    padding-bottom: 6%;
 }
 h3{
     font-size: 2rem;
@@ -32,5 +33,53 @@ h3{
     padding: 2% 40%;
     
 }
+
+.expenses{
+    background-color:#F39C12 ;
+    padding: 2% 15%;
+}
+
+.table-responsive-sm{
+    width: 19%;
+}
+
+
+.table-responsive-stack tr {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  
+  
+  .table-responsive-stack td,
+  .table-responsive-stack th {
+     display:block;
+  /*      
+     flex-grow | flex-shrink | flex-basis   */
+     -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
+  }
+  
+  @media screen and (max-width: 768px) {
+     .table-responsive-stack tr {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        border-bottom: 3px solid #ccc;
+        display:block;
+        
+     }
+     /*  IE9 FIX   */
+     .table-responsive-stack td {
+        float: left\9;
+        width:100%;
+     }
+  }
+
 
 
