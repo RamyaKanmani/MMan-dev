@@ -1,3 +1,5 @@
+//*************** */ Saving section Code for Adding extra fields (+) Start*************************
+
 document.getElementById("myBtn").addEventListener("click", savingsLIC);
 var licId= 1;
 function savingsLIC() {
@@ -22,10 +24,11 @@ document.getElementById("myBtn3").addEventListener("click", savingsOthers);
 function savingsOthers() {
   document.querySelector(".demo3").innerHTML += "<table class='table table-striped table-responsive-stack'> <tr><td> <label>Others &nbsp;&nbsp;</label></td><td><input type='text' placeholder='Name'></td><td><input type='number' placeholder='Amount'></input></td><td><select class='currency-selector'><option selected>Select Currency</option> <option>INR</option><option>USD</option><option>EUR</option><option>GBP</option><option>JPY</option> <option>CAD</option><option>AUD</option><option>INR</option></select></td><td><input type='date'></td> </tr></table> ";
 }
+//*************** */ Savings section Code for Adding extra fields (+) End*************************
 
 
 
-//******************************************* */ Expenses section ******************************************* */
+//******************************************* */ Expenses section Start******************************************* */
 
 document.querySelector(".loadAddBtn").addEventListener("click", loans);
 function loans() {
@@ -68,8 +71,9 @@ function restaurants() {
   document.querySelector(".restaurantsSection").innerHTML += "<table class='table table-striped table-responsive-stack'><tr><td><label>Restaurants Payments &nbsp;</label></td><td> <input type='text' name='Loan Name' placeholder='Name'></td><td> <input type='number' name='Amount' placeholder='Amount'></td><td><select id='currencyList'> <option value='USD' selected='selected' label='Indian rupee'>INR</option> <option value='IDR' label='Indonesian rupiah'>IDR</option> <option value='ILS' label='Israeli new shekel'>ILS</option> <option value='INR' label='Indian rupee'>INR</option> <option value='LKR' label='Sri Lankan rupee'>LKR</option> <option value='MRU' label='Mauritanian ouguiya'>MRU</option> <option value='MUR' label='Mauritian rupee'>MUR</option> <option value='MVR' label='Maldivian rufiyaa'>MVR</option> <option value='NZD' label='New Zealand dollar'>NZD</option> <option value='SGD' label='Singapore dollar'>SGD</option> <option value='USD' label='United States dollar'>USD</option> </select> </td><td><input type='date' name='Date'></td></tr></table>"; 
     
 }
+//******************************************* */ Expenses section End ******************************************* */
 
-///////////////////////////////////////////////// Displayning Month in Header///////////////////////////////////////////////
+////////////////////////////////////////// Displayning Month in Header Section Start//////////////////////////
 
 function myFunction() {
   var month = new Array();
@@ -91,7 +95,9 @@ function myFunction() {
   document.getElementById("month").innerHTML = n;
 }
 
-///////////////////////// Fetching Data from Salary and Other Section///////////////////////
+////////////////////////////////////////Displayning Month in Header Section End///////////////////////
+
+///////////////////////// Fetching Data from Earning and Savings Section Start///////////////////////
 
 function myFunction1() {
   var x = document.getElementById("salary_id");
@@ -150,6 +156,8 @@ function result()
     finalString += myFunction6();
     alert(finalString);
 }
+
+///////////////////////// Fetching Data from Earning and Savings Section End///////////////////////
 
 
 
