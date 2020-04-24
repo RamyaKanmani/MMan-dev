@@ -99,12 +99,12 @@ function myFunction() {
 
 ///////////////////////// Fetching Data from Earning and Savings Section Start///////////////////////
 
-function myFunction1() {
-  var x = document.getElementById("salary_id");
+function myFunction1(x) {
+  if(x.elements[2].value === "Select Currency") {
+      x.elements[2].value = "INR"
+  }
   var result0 = "Your Salary " +x.elements[3].value + " is " +x.elements[1].value + " " +x.elements[2].value ;
   return result0;
-  
-    
 }
 
 function myFunction2() {
@@ -142,19 +142,26 @@ function myFunction6() {
 
 function result()
 {
-    var finalString;   
-    finalString = myFunction1();
-    finalString += "\n";
-    finalString += myFunction2();
-    finalString += "\n";
-    finalString += myFunction3();
-    finalString += "\n";
-    finalString += myFunction4();
-    finalString += "\n";
-    finalString += myFunction5();
-    finalString += "\n";
-    finalString += myFunction6();
-    alert(finalString);
+    var finalString = "";   
+
+    var salary_id = document.getElementById("salary_id");
+    if(salary_id.elements[1].value.length !== 0) {
+        finalString += myFunction1(salary_id);
+    }
+    //finalString += "\n";
+    //finalString += myFunction2();
+    //finalString += "\n";
+    //finalString += myFunction3();
+    //finalString += "\n";
+    //finalString += myFunction4();
+    //finalString += "\n";
+    //finalString += myFunction5();
+    //finalString += "\n";
+    //finalString += myFunction6();
+    if(finalString === "")
+        alert("Nothing to show");
+    else 
+        alert(finalString);
 }
 
 ///////////////////////// Fetching Data from Earning and Savings Section End///////////////////////
