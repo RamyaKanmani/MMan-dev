@@ -107,34 +107,51 @@ function myFunction1(x) {
   return result0;
 }
 
-function myFunction2() {
-  var x = document.getElementById("others_id");
+function myFunction2(x) {
+  if(x.elements[2].value === "Select Currency") {
+    x.elements[2].value = "INR"
+  }
+  // var x = document.getElementById("others_id");
   var result1 = "Your Salary " +x.elements[3].value + " is " +x.elements[1].value + " " +x.elements[2].value ;
   return result1;
     
 }
 
-function myFunction3() {
-  var x = document.getElementById("lic_id");
+function myFunction3(x) {
+  if(x.elements[2].value === "Select Currency") {
+    x.elements[2].value = "INR"
+}
+  // var x = document.getElementById("lic_id");
   var result2 = "Your Investments on LIC is " +x.elements[1].value +x.elements[2].value;
   return result2;
     
 }
 
-function myFunction4() {
-  var x = document.getElementById("fd_id");
+function myFunction4(x) {
+  if(x.elements[2].value === "Select Currency") {
+    x.elements[2].value = "INR"
+}
+  // var x = document.getElementById("fd_id");
   var result3 = "Your Investments on FD is " +x.elements[1].value +x.elements[2].value;
   return result3;
     
 }
-function myFunction5() {
-  var x = document.getElementById("rd_id");
+function myFunction5(x) {
+
+  if(x.elements[2].value === "Select Currency") {
+    x.elements[2].value = "INR"
+}
+  // var x = document.getElementById("rd_id");
   var result4 = "Your Investments on FD is " +x.elements[1].value +x.elements[2].value;
   return result4;
     
 }
-function myFunction6() {
-  var x = document.getElementById("others1_id");
+function myFunction6(x) {
+
+  if(x.elements[2].value === "Select Currency") {
+    x.elements[2].value = "INR"
+}
+  // var x = document.getElementById("others1_id");
   var result5 = "Your Investments on FD is " +x.elements[1].value +x.elements[2].value;
   return result5;
     
@@ -148,6 +165,38 @@ function result()
     if(salary_id.elements[1].value.length !== 0) {
         finalString += myFunction1(salary_id);
     }
+
+    // finalString += "\n";
+
+    var others_id = document.getElementById("others_id");
+    if(others_id.elements[1].value.length !== 0) {
+        finalString += myFunction2(others_id);
+    }
+
+    // finalString += "\n";
+
+    var lic_id = document.getElementById("lic_id");
+    if(lic_id.elements[1].value.length !== 0) {
+        finalString += myFunction3(lic_id);
+    }
+
+
+    var fd_id = document.getElementById("fd_id");
+    if(fd_id.elements[1].value.length !== 0) {
+        finalString += myFunction4(fd_id);
+    }
+
+    var rd_id = document.getElementById("rd_id");
+    if(rd_id.elements[1].value.length !== 0) {
+        finalString += myFunction3(rd_id);
+    }
+
+    var others1_id = document.getElementById("others1_id");
+    if(others1_id.elements[1].value.length !== 0) {
+        finalString += myFunction2(others1_id);
+    }
+
+    
     //finalString += "\n";
     //finalString += myFunction2();
     //finalString += "\n";
