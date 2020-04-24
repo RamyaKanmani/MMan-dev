@@ -71,6 +71,45 @@ function restaurants() {
   document.querySelector(".restaurantsSection").innerHTML += "<form id='restaurantFormId'> <table class='table table-striped table-responsive-stack'><tr><td><label>Restaurants Payments &nbsp;</label></td><td> <input type='text' name='Loan Name' placeholder='Name'></td><td> <input type='number' name='Amount' placeholder='Amount'></td><td><select id='currencyList'> <option value='USD' selected='selected' label='Indian rupee'>INR</option> <option value='IDR' label='Indonesian rupiah'>IDR</option> <option value='ILS' label='Israeli new shekel'>ILS</option> <option value='INR' label='Indian rupee'>INR</option> <option value='LKR' label='Sri Lankan rupee'>LKR</option> <option value='MRU' label='Mauritanian ouguiya'>MRU</option> <option value='MUR' label='Mauritian rupee'>MUR</option> <option value='MVR' label='Maldivian rufiyaa'>MVR</option> <option value='NZD' label='New Zealand dollar'>NZD</option> <option value='SGD' label='Singapore dollar'>SGD</option> <option value='USD' label='United States dollar'>USD</option> </select> </td><td><input type='date' name='Date'></td></tr></table> </form>"; 
     
 }
+
+function loanAction(loanId) {
+  var fElements = document.getElementById(loanId);
+  loanResult = "your expense on "+ fElements.elements[0].value + " loan is " + fElements.elements[1].value + "  " +fElements.elements[2].value;
+  return loanResult;
+}
+function rentAction(rentId) {
+  var fElements = document.getElementById(rentId);
+  rentResult = "your expense on "+ fElements.elements[0].value + " rent is " + fElements.elements[1].value + fElements.elements[2].value;
+  return rentResult;
+}
+
+function groceriesAction(groceriesId) {
+  var fElements = document.getElementById(groceriesId);
+  groceriesResult = "your expense on "+ fElements.elements[0].value + " groceries is " + fElements.elements[1].value + fElements.elements[2].value;
+  return groceriesResult;
+}
+function billAction(billId) {
+  var fElements = document.getElementById(billId);
+  billResult = "your expense on "+ fElements.elements[0].value + " bill is " + fElements.elements[1].value + fElements.elements[2].value;
+  return billResult;
+}
+
+function medicineAction(medicineId) {
+  var fElements = document.getElementById(medicineId);
+  medicineResult = "your expense on "+ fElements.elements[0].value + " medicine is" + fElements.elements[1].value + fElements.elements[2].value;
+  return medicineResult;
+}
+function travelAction(travelId) {
+  var fElements = document.getElementById(travelId);
+  travelResult = "your expense on "+ fElements.elements[0].value + " travel is " + fElements.elements[1].value + fElements.elements[2].value;
+  return travelResult;
+}
+function restaurantAction(restaurantId) {
+  var fElements = document.getElementById(restaurantId);
+  restaurantResult = "your expense on "+ fElements.elements[0].value + " restaurant is" + fElements.elements[1].value + fElements.elements[2].value;
+  return restaurantResult;
+}
+
 //******************************************* */ Expenses section End ******************************************* */
 
 ////////////////////////////////////////// Displayning Month in Header Section Start//////////////////////////
@@ -160,7 +199,6 @@ function myFunction6(x) {
 function result()
 {
     var finalString = "";   
-
     var salary_id = document.getElementById("salary_id");
     if(salary_id.elements[1].value.length !== 0) {
         finalString += myFunction1(salary_id);
@@ -196,7 +234,42 @@ function result()
         finalString += myFunction2(others1_id);
     }
 
+    var load_Id = document.getElementById("loanFormId");
+    if(load_Id.elements[1].value.length !== 0) {
+        finalString = loanAction("loanFormId");
+    }
+
+    var rent_Id = document.getElementById("rentFormId");
+    if(rent_Id.elements[1].value.length !== 0){
+        finalString += rentAction("rentFormId");
+    }
+
+    var groceries_Id = document.getElementById("groceriesFormId");
+    if(groceries_Id.elements[1].value.length !== 0 ) {
+      finalString += groceriesAction("groceriesFormId");
+    }
+
+    var bill_Id = document.getElementById("billFormId")
+    if(bill_Id.elements[1].value.length !== 0) {
+      finalString += billAction("billFormId");
+    }
+
+    var medicine_Id = document.getElementById("medicineFormId");
+    if(medicine_Id.elements[1].value.length !==0) {
+      finalString += medicineAction("medicineFormId");
+    }
+  
+    var travel_Id = document.getElementById("travelFormId");
+    if(travel_Id.elements[1].value.length !==  0){
+      finalString += travelAction("travelFormId");
+    }
     
+    var restaurant_Id = document.getElementById("restaurantFormId");
+    if(restaurant_Id.elements[1].value.length !==  0) {
+      finalString += restaurantAction("restaurantFormId");
+    }
+  
+
     //finalString += "\n";
     //finalString += myFunction2();
     //finalString += "\n";
@@ -207,65 +280,12 @@ function result()
     //finalString += myFunction5();
     //finalString += "\n";
     //finalString += myFunction6();
-    if(finalString === "")
+    if(finalString === "") {
         alert("Nothing to show");
-    else 
+    }
+    else {
         alert(finalString);
+    }
 }
 
 ///////////////////////// Fetching Data from Earning and Savings Section End///////////////////////
-function loanAction(loanId) {
-  var fElements = document.getElementById(loanId);
-  loanResult = "your expense on "+ fElements.elements[0].value + "is" + fElements.elements[1].value + fElements.elements[2].value;
-  return loanResult;
-}
-function rentAction(rentId) {
-  var fElements = document.getElementById(rentId);
-  rentResult = "your expense on "+ fElements.elements[0].value + "is" + fElements.elements[1].value + fElements.elements[2].value;
-  return rentResult;
-}
-
-function groceriesAction(groceriesId) {
-  var fElements = document.getElementById(groceriesId);
-  groceriesResult = "your expense on "+ fElements.elements[0].value + "is" + fElements.elements[1].value + fElements.elements[2].value;
-  return groceriesResult;
-}
-function billAction(billId) {
-  var fElements = document.getElementById(billId);
-  billResult = "your expense on "+ fElements.elements[0].value + "is" + fElements.elements[1].value + fElements.elements[2].value;
-  return billResult;
-}
-
-function medicineAction(medicineId) {
-  var fElements = document.getElementById(medicineId);
-  medicineResult = "your expense on "+ fElements.elements[0].value + "is" + fElements.elements[1].value + fElements.elements[2].value;
-  return medicineResult;
-}
-function travelAction(travelId) {
-  var fElements = document.getElementById(travelId);
-  travelResult = "your expense on "+ fElements.elements[0].value + "is" + fElements.elements[1].value + fElements.elements[2].value;
-  return travelResult;
-}
-function restaurantAction(restaurantId) {
-  var fElements = document.getElementById(restaurantId);
-  restaurantResult = "your expense on "+ fElements.elements[0].value + "is" + fElements.elements[1].value + fElements.elements[2].value;
-  return restaurantResult;
-}
-
-function submitAction(){
-  var finalString;
-  finalString = loanAction("loanFormId");
-  finalString += "\n";
-  finalString += rentAction("rentFormId");
-  finalString += "\n";
-  finalString += groceriesAction("groceriesFormId");
-  finalString += "\n";
-  finalString += billAction("billFormId");
-  finalString += "\n";
-  finalString += medicineAction("medicineFormId");
-  finalString += "\n";
-  finalString += travelAction("travelFormId")
-  finalString += "\n";
-  finalString += restaurantAction("restaurantFormId")
-  alert(finalString);
-}
