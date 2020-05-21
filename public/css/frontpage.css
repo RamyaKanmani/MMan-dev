@@ -1,0 +1,23 @@
+/* .button{
+    margin: 4% 30%;
+    width: 40%;
+    
+} */
+
+body{
+    background-image: url('\\images\\FrontPage_Image.jpg');
+}
+
+h1{
+    /* text-align: center; */
+    margin-left: 20%;
+    margin-top: 16%;
+    font-size: 5rem;
+    color: brown;
+}
+
+button{
+    margin: 4% 28%;
+    width: 40%;  
+}
+

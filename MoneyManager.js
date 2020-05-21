@@ -1,291 +1,180 @@
-//*************** */ Saving section Code for Adding extra fields (+) Start*************************
+//jshint esversion:6
 
-document.getElementById("myBtn").addEventListener("click", savingsLIC);
-var licId= 1;
-function savingsLIC() {
-  var str = "<table id="+ "'" + licId + "'" + "class='table table-striped table-responsive-stack'> <tr><td> <label>LIC &nbsp;&nbsp;</label></td><td><input type='text' placeholder='Name'></td><td><input type='number' placeholder='Amount'></input></td><td><select class='currency-selector'><option selected>Select Currency</option> <option>INR</option><option>USD</option><option>EUR</option><option>GBP</option><option>JPY</option> <option>CAD</option><option>AUD</option><option>INR</option></select></td><td><input type='date'></td> </tr></table> ";
-  document.querySelector(".demo").innerHTML += str;
-  licId+=1;
-}
+const express = require("express");
+const bodyParser =  require("body-parser");
+const mongoose = require('mongoose');
+const md5 = require('md5');
+const validate = require('./node_modules..gitignore/mongoose-validator/lib/mongoose-validator');
+const { check, validationResult } = require('./node_modules..gitignore/express-validator/src');
 
+const app = express();
 
-document.getElementById("myBtn1").addEventListener("click", savingsFD);
-function savingsFD() {
-  document.querySelector(".demo1").innerHTML += "<table class='table table-striped table-responsive-stack'> <tr><td> <label>FD &nbsp;&nbsp;</label></td><td><input type='text' placeholder='Name'></td><td><input type='number' placeholder='Amount'></input></td><td><select class='currency-selector'><option selected>Select Currency</option> <option>INR</option><option>USD</option><option>EUR</option><option>GBP</option><option>JPY</option> <option>CAD</option><option>AUD</option><option>INR</option></select></td><td><input type='date'></td> </tr></table> ";
-}
-
-
-document.getElementById("myBtn2").addEventListener("click", savingsRD);
-function savingsRD() {
-  document.querySelector(".demo2").innerHTML += "<table class='table table-striped table-responsive-stack'> <tr><td> <label>RD &nbsp;&nbsp;</label></td><td><input type='text' placeholder='Name'></td><td><input type='number' placeholder='Amount'></input></td><td><select class='currency-selector'><option selected>Select Currency</option> <option>INR</option><option>USD</option><option>EUR</option><option>GBP</option><option>JPY</option> <option>CAD</option><option>AUD</option><option>INR</option></select></td><td><input type='date'></td> </tr></table> ";
-}
-
-document.getElementById("myBtn3").addEventListener("click", savingsOthers);
-function savingsOthers() {
-  document.querySelector(".demo3").innerHTML += "<table class='table table-striped table-responsive-stack'> <tr><td> <label>Others &nbsp;&nbsp;</label></td><td><input type='text' placeholder='Name'></td><td><input type='number' placeholder='Amount'></input></td><td><select class='currency-selector'><option selected>Select Currency</option> <option>INR</option><option>USD</option><option>EUR</option><option>GBP</option><option>JPY</option> <option>CAD</option><option>AUD</option><option>INR</option></select></td><td><input type='date'></td> </tr></table> ";
-}
-//*************** */ Savings section Code for Adding extra fields (+) End*************************
+var list = [];
+var today;
+app.set('view engine', 'ejs');
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static("public"));
 
 
 
-//******************************************* */ Expenses section Start******************************************* */
+mongoose.connect("mongodb://localhost:27017/userDB",{useNewUrlParser: true, useUnifiedTopology: true});
 
-document.querySelector(".loadAddBtn").addEventListener("click", loans);
-function loans() {
-  document.querySelector(".loanSection").innerHTML += "<form id='loanFormId'> <table class='table table-striped table-responsive-stack'><tr><td><label>Loan payments &nbsp;</label></td><td> <input type='text' name='Loan Name' placeholder='Name'></td><td> <input type='number' name='Amount' placeholder='Amount'></td><td><select id='currencyList'> <option value='USD' selected='selected' label='Indian rupee'>INR</option> <option value='IDR' label='Indonesian rupiah'>IDR</option> <option value='ILS' label='Israeli new shekel'>ILS</option> <option value='INR' label='Indian rupee'>INR</option> <option value='LKR' label='Sri Lankan rupee'>LKR</option> <option value='MRU' label='Mauritanian ouguiya'>MRU</option> <option value='MUR' label='Mauritian rupee'>MUR</option> <option value='MVR' label='Maldivian rufiyaa'>MVR</option> <option value='NZD' label='New Zealand dollar'>NZD</option> <option value='SGD' label='Singapore dollar'>SGD</option> <option value='USD' label='United States dollar'>USD</option> </select> </td><td><input type='date' name='Date'></td></tr></table> </form>"; 
-    
-}
 
-document.querySelector(".rentAddBtn").addEventListener("click", rents);
-function rents() {
-  document.querySelector(".rentSection").innerHTML += "<form id='rentFormId'> <table class='table table-striped table-responsive-stack'><tr><td><label>Rent payments &nbsp;</label></td><td> <input type='text' name='Loan Name' placeholder='Name'></td><td> <input type='number' name='Amount' placeholder='Amount'></td><td><select id='currencyList'> <option value='USD' selected='selected' label='Indian rupee'>INR</option> <option value='IDR' label='Indonesian rupiah'>IDR</option> <option value='ILS' label='Israeli new shekel'>ILS</option> <option value='INR' label='Indian rupee'>INR</option> <option value='LKR' label='Sri Lankan rupee'>LKR</option> <option value='MRU' label='Mauritanian ouguiya'>MRU</option> <option value='MUR' label='Mauritian rupee'>MUR</option> <option value='MVR' label='Maldivian rufiyaa'>MVR</option> <option value='NZD' label='New Zealand dollar'>NZD</option> <option value='SGD' label='Singapore dollar'>SGD</option> <option value='USD' label='United States dollar'>USD</option> </select> </td><td><input type='date' name='Date'></td></tr></table> </form>"; 
-    
-}
+// var nameValidator = [
+//   validate({
+//     validator: 'isLength',
+//     arguments: [3, 50],
+//     message: 'Field shoudnot blank',
+//   }),
+// ]
+ 
+// var Schema = new mongoose.Schema({
+//   name: { type: String, required: true, validate: nameValidator },
+// })
 
-document.querySelector(".groceriesAddBtn").addEventListener("click", groceries);
-function groceries() {
-  document.querySelector(".groceriesSection").innerHTML += "<form id='groceriesFormId'> <table class='table table-striped table-responsive-stack'><tr><td><label>Groceries &nbsp;</label></td><td> <input type='text' name='Loan Name' placeholder='Name'></td><td> <input type='number' name='Amount' placeholder='Amount'></td><td><select id='currencyList'> <option value='USD' selected='selected' label='Indian rupee'>INR</option> <option value='IDR' label='Indonesian rupiah'>IDR</option> <option value='ILS' label='Israeli new shekel'>ILS</option> <option value='INR' label='Indian rupee'>INR</option> <option value='LKR' label='Sri Lankan rupee'>LKR</option> <option value='MRU' label='Mauritanian ouguiya'>MRU</option> <option value='MUR' label='Mauritian rupee'>MUR</option> <option value='MVR' label='Maldivian rufiyaa'>MVR</option> <option value='NZD' label='New Zealand dollar'>NZD</option> <option value='SGD' label='Singapore dollar'>SGD</option> <option value='USD' label='United States dollar'>USD</option> </select> </td><td><input type='date' name='Date'></td></tr></table> </form>"; 
-    
-}
+// const userSchema = new mongoose.Schema({
+//   email: {
+//       type: String,
+//       required: true,
+//       minlength: 4,
+//       maxlength: 200,
+//     },
+//     password: {
+//       type: String,
+//       required: true,
+//       minlength: 4,
+//       maxlength: 200
+//     }
+// });
 
-document.querySelector(".billAddBtn").addEventListener("click", bills);
-function bills() {
-  document.querySelector(".billSection").innerHTML += "<form id='billFormId'> <table class='table table-striped table-responsive-stack'><tr><td><label>Bill payments &nbsp;</label></td><td> <input type='text' name='Loan Name' placeholder='Name'></td><td> <input type='number' name='Amount' placeholder='Amount'></td><td><select id='currencyList'> <option value='USD' selected='selected' label='Indian rupee'>INR</option> <option value='IDR' label='Indonesian rupiah'>IDR</option> <option value='ILS' label='Israeli new shekel'>ILS</option> <option value='INR' label='Indian rupee'>INR</option> <option value='LKR' label='Sri Lankan rupee'>LKR</option> <option value='MRU' label='Mauritanian ouguiya'>MRU</option> <option value='MUR' label='Mauritian rupee'>MUR</option> <option value='MVR' label='Maldivian rufiyaa'>MVR</option> <option value='NZD' label='New Zealand dollar'>NZD</option> <option value='SGD' label='Singapore dollar'>SGD</option> <option value='USD' label='United States dollar'>USD</option> </select> </td><td><input type='date' name='Date'></td></tr></table> </form>"; 
-    
-}
 
-document.querySelector(".medicineAddBtn").addEventListener("click", medicine);
-function medicine() {
-  document.querySelector(".medicineSection").innerHTML += "<form id='medicineFormId'> <table class='table table-striped table-responsive-stack'><tr><td><label>Medicines &nbsp;</label></td><td> <input type='text' name='Loan Name' placeholder='Name'></td><td> <input type='number' name='Amount' placeholder='Amount'></td><td><select id='currencyList'> <option value='USD' selected='selected' label='Indian rupee'>INR</option> <option value='IDR' label='Indonesian rupiah'>IDR</option> <option value='ILS' label='Israeli new shekel'>ILS</option> <option value='INR' label='Indian rupee'>INR</option> <option value='LKR' label='Sri Lankan rupee'>LKR</option> <option value='MRU' label='Mauritanian ouguiya'>MRU</option> <option value='MUR' label='Mauritian rupee'>MUR</option> <option value='MVR' label='Maldivian rufiyaa'>MVR</option> <option value='NZD' label='New Zealand dollar'>NZD</option> <option value='SGD' label='Singapore dollar'>SGD</option> <option value='USD' label='United States dollar'>USD</option> </select> </td><td><input type='date' name='Date'></td></tr></table> </form>"; 
-    
-}
+ const userSchema = {   
+   email: String,
+   password: String
+ };
 
-document.querySelector(".travelAddBtn").addEventListener("click", travel);
-function travel() {
-  document.querySelector(".travelSection").innerHTML += "<form id='travelFormId'> <table class='table table-striped table-responsive-stack'><tr><td><label>Travel Expenses &nbsp;</label></td><td> <input type='text' name='Loan Name' placeholder='Name'></td><td> <input type='number' name='Amount' placeholder='Amount'></td><td><select id='currencyList'> <option value='USD' selected='selected' label='Indian rupee'>INR</option> <option value='IDR' label='Indonesian rupiah'>IDR</option> <option value='ILS' label='Israeli new shekel'>ILS</option> <option value='INR' label='Indian rupee'>INR</option> <option value='LKR' label='Sri Lankan rupee'>LKR</option> <option value='MRU' label='Mauritanian ouguiya'>MRU</option> <option value='MUR' label='Mauritian rupee'>MUR</option> <option value='MVR' label='Maldivian rufiyaa'>MVR</option> <option value='NZD' label='New Zealand dollar'>NZD</option> <option value='SGD' label='Singapore dollar'>SGD</option> <option value='USD' label='United States dollar'>USD</option> </select> </td><td><input type='date' name='Date'></td></tr></table> </form>"; 
-    
-}
+const User = new mongoose.model("User", userSchema);
 
-document.querySelector(".restaurantsAddBtn").addEventListener("click", restaurants);
-function restaurants() {
-  document.querySelector(".restaurantsSection").innerHTML += "<form id='restaurantFormId'> <table class='table table-striped table-responsive-stack'><tr><td><label>Restaurants Payments &nbsp;</label></td><td> <input type='text' name='Loan Name' placeholder='Name'></td><td> <input type='number' name='Amount' placeholder='Amount'></td><td><select id='currencyList'> <option value='USD' selected='selected' label='Indian rupee'>INR</option> <option value='IDR' label='Indonesian rupiah'>IDR</option> <option value='ILS' label='Israeli new shekel'>ILS</option> <option value='INR' label='Indian rupee'>INR</option> <option value='LKR' label='Sri Lankan rupee'>LKR</option> <option value='MRU' label='Mauritanian ouguiya'>MRU</option> <option value='MUR' label='Mauritian rupee'>MUR</option> <option value='MVR' label='Maldivian rufiyaa'>MVR</option> <option value='NZD' label='New Zealand dollar'>NZD</option> <option value='SGD' label='Singapore dollar'>SGD</option> <option value='USD' label='United States dollar'>USD</option> </select> </td><td><input type='date' name='Date'></td></tr></table> </form>"; 
-    
-}
+app.get("/", function(req, res){
+  res.render("home");
+})
+app.get("/login", function(req, res){
+  res.render("login");
+})
+app.get("/register", function(req, res){
+  res.render("register");
+})
 
-function loanAction(loanId) {
-  var fElements = document.getElementById(loanId);
-  loanResult = "your expense on "+ fElements.elements[0].value + " loan is " + fElements.elements[1].value + "  " +fElements.elements[2].value;
-  return loanResult;
-}
-function rentAction(rentId) {
-  var fElements = document.getElementById(rentId);
-  rentResult = "your expense on "+ fElements.elements[0].value + " rent is " + fElements.elements[1].value + fElements.elements[2].value;
-  return rentResult;
-}
 
-function groceriesAction(groceriesId) {
-  var fElements = document.getElementById(groceriesId);
-  groceriesResult = "your expense on "+ fElements.elements[0].value + " groceries is " + fElements.elements[1].value + fElements.elements[2].value;
-  return groceriesResult;
-}
-function billAction(billId) {
-  var fElements = document.getElementById(billId);
-  billResult = "your expense on "+ fElements.elements[0].value + " bill is " + fElements.elements[1].value + fElements.elements[2].value;
-  return billResult;
-}
+app.post("/register", function(req, res){
+  const newUser = new User({
+    email: req.body.username,
+    password: md5(req.body.password)
+  });
 
-function medicineAction(medicineId) {
-  var fElements = document.getElementById(medicineId);
-  medicineResult = "your expense on "+ fElements.elements[0].value + " medicine is" + fElements.elements[1].value + fElements.elements[2].value;
-  return medicineResult;
-}
-function travelAction(travelId) {
-  var fElements = document.getElementById(travelId);
-  travelResult = "your expense on "+ fElements.elements[0].value + " travel is " + fElements.elements[1].value + fElements.elements[2].value;
-  return travelResult;
-}
-function restaurantAction(restaurantId) {
-  var fElements = document.getElementById(restaurantId);
-  restaurantResult = "your expense on "+ fElements.elements[0].value + " restaurant is" + fElements.elements[1].value + fElements.elements[2].value;
-  return restaurantResult;
-}
+  newUser.save(function(err){
+    if(err){
+      console.log(err);
+    }
+    else{
+      res.render("homePage");
+    }
+  })
+})
 
-//******************************************* */ Expenses section End ******************************************* */
+app.post("/login", function(req, res){
+  const username= req.body.username;
+  const password= md5(req.body.password);
+  User.findOne({email:username}, function(err , foundUser){
+         if(err){
+           console.log(err);
+         }
+         else{
+           if(foundUser.password === password){
+             res.render("homePage");
+           }
+         }
+  })
+  });
 
-////////////////////////////////////////// Displayning Month in Header Section Start//////////////////////////
+// app.post("/login", 
+//   // [ check('username', 'email should be email id').isEmail(),
+//   //   check('password', 'Password must be in 5 characters').isLength({ min: 5 })], 
+ 
+//     function(req, res){
+//     // const errors = validationResult(req);
+//     // console.log(errors.mapped());
+//     // res.render("/login", {error: errors.mapped()});
+//     res.render("/login");
+//     const username= req.body.username;
+//     const password= md5(req.body.password);
+//     User.findOne({email:username}, function(err , foundUser){
+//          if(err){
+//            console.log(err);
+//          }
+//          else{
+//            if(foundUser.password === password){
+//              res.render("homePage");
+//            }
+//          }
+//   });
 
-function myFunction() {
-  var month = new Array();
-  month[0] = "January";
-  month[1] = "February";
-  month[2] = "March";
-  month[3] = "April";
-  month[4] = "May";
-  month[5] = "June";
-  month[6] = "July";
-  month[7] = "August";
-  month[8] = "September";
-  month[9] = "October";
-  month[10] = "November";
-  month[11] = "December";
+  
+  ///////////////////////////////Add Data Page////////////////////////////
+app.post("/", function(req, res){
+  if(req.body.addDataBtn === "addData")  {
+    res.redirect("/add");
+  }
+  else if(req.body.viewDataBtn === "viewData"){
+    res.redirect("/view");
+  }
+});
 
+app.get("/add", function(req, res){
+  res.render("addPage");
+});
+
+app.post("/add", function(req, res){
+  list = [];
   var d = new Date();
-  var n = month[d.getMonth()];
-  document.getElementById("month").innerHTML = n;
-}
+  today = d.toLocaleDateString();
+  list.push([req.body.salaryName, req.body.salaryAmount, req.body.salaryCurrency, req.body.salaryDate]);
+  list.push([req.body.othersname, req.body.othersamount, req.body.otherscurrency, req.body.othersdate]);
+  list.push([req.body.loanRepaymentsName, req.body.loanRepaymentsAmount, req.body.loanRepaymentsCurrency, req.body.loanRepaymentsDate]);
+  list.push([req.body.rentRepaymentsName, req.body.rentRepaymentsAmount, req.body.rentRepaymentsCurrency, req.body.rentRepaymentsDate]);
+  list.push([req.body.groceriesName, req.body.groceriesAmount, req.body.groceriesCurrency, req.body.groceriesDate]);
+  list.push([req.body.billRepaymentsName, req.body.billPaymentAmount, req.body.billPaymentCurrency, req.body.billPaymentDate]);
+  list.push([req.body.MedicinesRepaymentsName, req.body.MedicinesRepaymentsAmount, req.body.MedicinesPaymentCurrency, req.body.medicinesPaymentDate]);
+  list.push([req.body.travelExpensesName, req.body.travelExpensesAmount, req.body.travelExpensesCurrency, req.body.travelExpensesDate]);
+  list.push([req.body.restaurantsRepaymentsName, req.body.restaurantsRepaymentsAmount, req.body.restaurantsRepaymentsCurrency, req.body.restaurantsRepaymentsDate]);
+  list.push([req.body.licName, req.body.licAmount, req.body.licCurrency, req.body.licDate]);
+  list.push([req.body.fdName, req.body.fdAmount, req.body.fdCurrency, req.body.fdDate]);
+  list.push([req.body.rdName, req.body.rdAmount, req.body.rdCurrency, req.body.rdDate]);
+  list.push([req.body.othersSavingsName, req.body.othersSavingsAmount, req.body.othersSavingsCurrency, req.body.othersSavingsDate]);
+  console.log(list);
+  res.redirect("/view");
+});
 
-////////////////////////////////////////Displayning Month in Header Section End///////////////////////
-
-///////////////////////// Fetching Data from Earning and Savings Section Start///////////////////////
-
-function myFunction1(x) {
-  if(x.elements[2].value === "Select Currency") {
-      x.elements[2].value = "INR"
-  }
-  var result0 = "Your Salary " +x.elements[3].value + " is " +x.elements[1].value + " " +x.elements[2].value ;
-  return result0;
-}
-
-function myFunction2(x) {
-  if(x.elements[2].value === "Select Currency") {
-    x.elements[2].value = "INR"
-  }
-  // var x = document.getElementById("others_id");
-  var result1 = "Your Salary " +x.elements[3].value + " is " +x.elements[1].value + " " +x.elements[2].value ;
-  return result1;
-    
-}
-
-function myFunction3(x) {
-  if(x.elements[2].value === "Select Currency") {
-    x.elements[2].value = "INR"
-}
-  // var x = document.getElementById("lic_id");
-  var result2 = "Your Investments on LIC is " +x.elements[1].value +x.elements[2].value;
-  return result2;
-    
-}
-
-function myFunction4(x) {
-  if(x.elements[2].value === "Select Currency") {
-    x.elements[2].value = "INR"
-}
-  // var x = document.getElementById("fd_id");
-  var result3 = "Your Investments on FD is " +x.elements[1].value +x.elements[2].value;
-  return result3;
-    
-}
-function myFunction5(x) {
-
-  if(x.elements[2].value === "Select Currency") {
-    x.elements[2].value = "INR"
-}
-  // var x = document.getElementById("rd_id");
-  var result4 = "Your Investments on FD is " +x.elements[1].value +x.elements[2].value;
-  return result4;
-    
-}
-function myFunction6(x) {
-
-  if(x.elements[2].value === "Select Currency") {
-    x.elements[2].value = "INR"
-}
-  // var x = document.getElementById("others1_id");
-  var result5 = "Your Investments on FD is " +x.elements[1].value +x.elements[2].value;
-  return result5;
-    
-}
-
-function result()
-{
-    var finalString = "";   
-    var salary_id = document.getElementById("salary_id");
-    if(salary_id.elements[1].value.length !== 0) {
-        finalString += myFunction1(salary_id);
-    }
-
-    // finalString += "\n";
-
-    var others_id = document.getElementById("others_id");
-    if(others_id.elements[1].value.length !== 0) {
-        finalString += myFunction2(others_id);
-    }
-
-    // finalString += "\n";
-
-    var lic_id = document.getElementById("lic_id");
-    if(lic_id.elements[1].value.length !== 0) {
-        finalString += myFunction3(lic_id);
-    }
-
-
-    var fd_id = document.getElementById("fd_id");
-    if(fd_id.elements[1].value.length !== 0) {
-        finalString += myFunction4(fd_id);
-    }
-
-    var rd_id = document.getElementById("rd_id");
-    if(rd_id.elements[1].value.length !== 0) {
-        finalString += myFunction3(rd_id);
-    }
-
-    var others1_id = document.getElementById("others1_id");
-    if(others1_id.elements[1].value.length !== 0) {
-        finalString += myFunction2(others1_id);
-    }
-
-    var load_Id = document.getElementById("loanFormId");
-    if(load_Id.elements[1].value.length !== 0) {
-        finalString = loanAction("loanFormId");
-    }
-
-    var rent_Id = document.getElementById("rentFormId");
-    if(rent_Id.elements[1].value.length !== 0){
-        finalString += rentAction("rentFormId");
-    }
-
-    var groceries_Id = document.getElementById("groceriesFormId");
-    if(groceries_Id.elements[1].value.length !== 0 ) {
-      finalString += groceriesAction("groceriesFormId");
-    }
-
-    var bill_Id = document.getElementById("billFormId")
-    if(bill_Id.elements[1].value.length !== 0) {
-      finalString += billAction("billFormId");
-    }
-
-    var medicine_Id = document.getElementById("medicineFormId");
-    if(medicine_Id.elements[1].value.length !==0) {
-      finalString += medicineAction("medicineFormId");
-    }
+app.get("/view", function(req, res){
+ 
+  res.render("showPage", {salaryName: list[0][0], salaryAmount: list[0][1], salaryCurrency: list[0][2], salaryDate: list[0][3],
+                         othersname: list[1][0], othersamount: list[1][1], otherscurrency: list[1][2], othersdate: list[1][3],
+                         loanRepaymentsName: list[2][0], loanRepaymentsAmount: list[2][1], loanRepaymentsCurrency: list[2][2], loanRepaymentsDate: list[2][3],
+                         rentRepaymentsName: list[3][0], rentRepaymentsAmount: list[3][1], rentRepaymentsCurrency: list[3][2], rentRepaymentsDate: list[3][3],
+                         groceriesName: list[4][0], groceriesAmount: list[4][1], groceriesCurrency: list[4][2], groceriesDate: list[4][3],
+                         billRepaymentsName: list[5][0], billPaymentAmount: list[5][1], billPaymentCurrency: list[5][2], billPaymentDate: list[5][3],
+                         MedicinesRepaymentsName: list[6][0], MedicinesRepaymentsAmount: list[6][1], MedicinesPaymentCurrency: list[6][2], medicinesPaymentDate: list[6][3],
+                         travelExpensesName: list[7][0], travelExpensesAmount: list[7][1], travelExpensesCurrency: list[7][2], travelExpensesDate: list[7][3],
+                         restaurantsRepaymentsName: list[8][0], restaurantsRepaymentsAmount: list[8][1], restaurantsRepaymentsCurrency: list[8][2], restaurantsRepaymentsDate: list[8][3],
+                         licName: list[9][0], licAmount: list[9][1], licCurrency: list[9][2], licDate: list[9][3],
+                         fdName: list[10][0], fdAmount: list[10][1], fdCurrency: list[10][2], fdDate: list[10][3],
+                         rdName: list[11][0], rdAmount: list[11][1], rdCurrency: list[11][2], rdDate: list[11][3],
+                         othersSavingsName: list[12][0], othersSavingsAmount: list[12][1], othersSavingsCurrency: list[12][2], othersSavingsDate: list[12][3],
+                         today: today
+                    });
   
-    var travel_Id = document.getElementById("travelFormId");
-    if(travel_Id.elements[1].value.length !==  0){
-      finalString += travelAction("travelFormId");
-    }
-    
-    var restaurant_Id = document.getElementById("restaurantFormId");
-    if(restaurant_Id.elements[1].value.length !==  0) {
-      finalString += restaurantAction("restaurantFormId");
-    }
-  
+});
 
-    //finalString += "\n";
-    //finalString += myFunction2();
-    //finalString += "\n";
-    //finalString += myFunction3();
-    //finalString += "\n";
-    //finalString += myFunction4();
-    //finalString += "\n";
-    //finalString += myFunction5();
-    //finalString += "\n";
-    //finalString += myFunction6();
-    if(finalString === "") {
-        alert("Nothing to show");
-    }
-    else {
-        alert(finalString);
-    }
-}
-
-///////////////////////// Fetching Data from Earning and Savings Section End///////////////////////
+app.listen(3000, function(req, res){
+  console.log("server is listening to 3000 port");
+});

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Manager</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+   
+</head>
+<body>
+
+    
+    
+    <div class=" earning">
+    <form action="/add" method="POST">
+       
+        <h2>Earnings</h2>
+       <table id="tbl" class="table table-striped table-responsive-stack">
+            <tr>
+                <td> <label>Salary &nbsp;&nbsp;</label></td>
+                <td><input name="salaryName" type="text" placeholder="Name"  autocomplete="off"></td>
+                <td><input  name="salaryAmount" type="number" placeholder="Amount" ></input></td>
+                <td><select  name="salaryCurrency" class="currency-selector" >
+                        <option value='INR' selected='selected'selected>Select Currency</option>
+                        <option>INR</option>
+                        <option>USD</option>
+                        <option>EUR</option>
+                        <option>GBP</option>
+                        <option>JPY</option>
+                        <option>CAD</option>
+                        <option>AUD</option>
+                       
+                    </select></td>
+                <td><input  name="salaryDate" type="date" ></td>
+        </tr>
+     </table>
+
+<br> <br>
+
+<table class="table table-striped table-responsive-stack">               
+    <tr>
+        <td><label>Others &nbsp;</label></td>
+        <td><input  name="othersname" type="text" placeholder="Name"  autocomplete="off"></td>
+        <td><input  name= "othersamount" type="number" placeholder="Amount" ></input></td>
+        <td><select name="otherscurrency" class="currency-selector">
+                <option value='INR' selected='selected'selected>Select Currency</option>
+                <option>INR</option>
+                <option>USD</option>
+                <option>EUR</option>
+                <option>GBP</option>
+                <option>JPY</option>
+                <option>CAD</option>
+                <option>AUD</option>
+               
+             </select></td>
+        <td><input  name="othersdate" type="date" ></td>
+    </tr>
+</table>
+</div>
+<br><br>
+
+
+
+<div class="expenses">
+    
+    <h2>Expenses</h2>
+    
+                                        <!----------- Loan Repayments  ---------------->
+  <div class="loanSection">
+      <table class="table table-striped table-responsive-stack">
+          <tr>
+            <td><label>Loan Repayments &nbsp;</label></td>
+            <td> <input type="text" name="loanRepaymentsName" placeholder='Name' autocomplete="off"></td>
+            <td> <input type='number' name='loanRepaymentsAmount' placeholder='Amount'></td>
+            <td>
+                <select id='currencyList' name="loanRepaymentsCurrency"> <option value='INR' selected='selected' label='Indian rupee'>INR</option> <option value='IDR' label='Indonesian rupiah'>IDR</option> <option value='ILS' label='Israeli new shekel'>ILS</option> <option value='INR' label='Indian rupee'>INR</option> <option value='LKR' label='Sri Lankan rupee'>LKR</option> <option value='MRU' label='Mauritanian ouguiya'>MRU</option> <option value='MUR' label='Mauritian rupee'>MUR</option> <option value='MVR' label='Maldivian rufiyaa'>MVR</option> <option value='NZD' label='New Zealand dollar'>NZD</option> <option value='SGD' label='Singapore dollar'>SGD</option> <option value='USD' label='United States dollar'>USD</option> </select>
+            </td>
+          <td><input type='date' name='loanRepaymentsDate'></td>
+          </tr>
+        
+      </table>
+      
+  </div>
+  
+
+                                      <!----------- Rent Repayments  ---------------->
+  <div class="rentSection">
+    <table class="table table-striped table-responsive-stack">
+        <tr>
+          <td><label>Rent Repayments &nbsp;</label></td>
+          <td> <input type="text" name="rentRepaymentsName" placeholder='Name' autocomplete="off"></td>
+          <td> <input type='number' name='rentRepaymentsAmount' placeholder='Amount'></td>
+          <td>
+              <select id='currencyList' name="rentRepaymentsCurrency"> <option value='INR' selected='selected' label='Indian rupee'>INR</option> <option value='IDR' label='Indonesian rupiah'>IDR</option> <option value='ILS' label='Israeli new shekel'>ILS</option> <option value='INR' label='Indian rupee'>INR</option> <option value='LKR' label='Sri Lankan rupee'>LKR</option> <option value='MRU' label='Mauritanian ouguiya'>MRU</option> <option value='MUR' label='Mauritian rupee'>MUR</option> <option value='MVR' label='Maldivian rufiyaa'>MVR</option> <option value='NZD' label='New Zealand dollar'>NZD</option> <option value='SGD' label='Singapore dollar'>SGD</option> <option value='USD' label='United States dollar'>USD</option> </select>
+          </td>
+        <td><input type='date' name='rentRepaymentsDate'></td>
+        </tr>
+      
+    </table>
+  </div>
+ 
+                                      <!-------------  Groceries  ---------------->   
+  <div class="groceriesSection">
+    <table class="table table-striped table-responsive-stack">
+        <tr>
+          <td><label>Groceries &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label></td>
+          <td> <input type="text" name="groceriesName" placeholder='Name' autocomplete="off"></td>
+          <td> <input type='number' name='groceriesAmount' placeholder='Amount'></td>
+          <td>
+              <select id='currencyList' name="groceriesCurrency"> <option value='INR' selected='selected' label='Indian rupee'>INR</option> <option value='IDR' label='Indonesian rupiah'>IDR</option> <option value='ILS' label='Israeli new shekel'>ILS</option> <option value='INR' label='Indian rupee'>INR</option> <option value='LKR' label='Sri Lankan rupee'>LKR</option> <option value='MRU' label='Mauritanian ouguiya'>MRU</option> <option value='MUR' label='Mauritian rupee'>MUR</option> <option value='MVR' label='Maldivian rufiyaa'>MVR</option> <option value='NZD' label='New Zealand dollar'>NZD</option> <option value='SGD' label='Singapore dollar'>SGD</option> <option value='USD' label='United States dollar'>USD</option> </select>
+          </td>
+        <td><input type='date' name='groceriesDate'></td>
+        </tr>
+      
+    </table>
+  </div>
+ 
+
+                                     <!----------- Bill Repayments  ---------------->
+  <div class="billSection">
+    <table class="table table-striped table-responsive-stack">
+        <tr>
+          <td><label>Bill Repayments &nbsp; &nbsp;</label></td>
+          <td> <input type="text" name="billRepaymentsName" placeholder='Name'autocomplete="off"></td>
+          <td> <input type='number' name='billPaymentAmount' placeholder='Amount'></td>
+          <td>
+              <select id='currencyList' name="billPaymentCurrency"> <option value='INR' selected='selected' label='Indian rupee'>INR</option> <option value='IDR' label='Indonesian rupiah'>IDR</option> <option value='ILS' label='Israeli new shekel'>ILS</option> <option value='INR' label='Indian rupee'>INR</option> <option value='LKR' label='Sri Lankan rupee'>LKR</option> <option value='MRU' label='Mauritanian ouguiya'>MRU</option> <option value='MUR' label='Mauritian rupee'>MUR</option> <option value='MVR' label='Maldivian rufiyaa'>MVR</option> <option value='NZD' label='New Zealand dollar'>NZD</option> <option value='SGD' label='Singapore dollar'>SGD</option> <option value='USD' label='United States dollar'>USD</option> </select>
+          </td>
+        <td><input type='date' name='billPaymentDate'></td>
+        </tr>
+      
+    </table>
+  </div>
+ 
+                                    <!----------- Medicines Repayments  ---------------->
+  <div class="medicineSection">
+    <table class="table table-striped table-responsive-stack">
+        <tr>
+          <td><label>Medicines&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label></td>
+          <td> <input type="text" name="MedicinesRepaymentsName" placeholder='Name' autocomplete="off"></td>
+          <td> <input type='number' name='MedicinesRepaymentsAmount' placeholder='Amount'></td>
+          <td>
+              <select id='currencyList' name="MedicinesPaymentCurrency"> <option value='INR' selected='selected' label='Indian rupee'>INR</option> <option value='IDR' label='Indonesian rupiah'>IDR</option> <option value='ILS' label='Israeli new shekel'>ILS</option> <option value='INR' label='Indian rupee'>INR</option> <option value='LKR' label='Sri Lankan rupee'>LKR</option> <option value='MRU' label='Mauritanian ouguiya'>MRU</option> <option value='MUR' label='Mauritian rupee'>MUR</option> <option value='MVR' label='Maldivian rufiyaa'>MVR</option> <option value='NZD' label='New Zealand dollar'>NZD</option> <option value='SGD' label='Singapore dollar'>SGD</option> <option value='USD' label='United States dollar'>USD</option> </select>
+          </td>
+        <td><input type='date' name='medicinesPaymentDate'></td>
+        </tr>
+      
+    </table>
+  </div>
+  
+                                    <!----------- Travel Expenses  ---------------->
+  <div class="travelSection">
+    <table class="table table-striped table-responsive-stack">
+        <tr>
+          <td><label>Travel Expenses &nbsp;</label></td>
+          <td> <input type="text"  name="travelExpensesName" placeholder='Name' autocomplete="off"></td>
+          <td> <input type='number' name="travelExpensesAmount" placeholder='Amount'></td>
+          <td>
+              <select id='currencyList' name="travelExpensesCurrency"> <option value='INR' selected='selected' label='Indian rupee'>INR</option> <option value='IDR' label='Indonesian rupiah'>IDR</option> <option value='ILS' label='Israeli new shekel'>ILS</option> <option value='INR' label='Indian rupee'>INR</option> <option value='LKR' label='Sri Lankan rupee'>LKR</option> <option value='MRU' label='Mauritanian ouguiya'>MRU</option> <option value='MUR' label='Mauritian rupee'>MUR</option> <option value='MVR' label='Maldivian rufiyaa'>MVR</option> <option value='NZD' label='New Zealand dollar'>NZD</option> <option value='SGD' label='Singapore dollar'>SGD</option> <option value='USD' label='United States dollar'>USD</option> </select>
+          </td>
+        <td><input type='date' name="travelExpensesDate"></td>
+        </tr>
+      
+    </table>
+  </div>
+ 
+                                    <!----------- Restaurants Repayments  ---------------->
+  <div class="restaurantsSection">
+    <table class="table table-striped table-responsive-stack">
+        <tr>
+          <td><label>Restaurants payments</label></td>
+          <td> <input type="text"  name="restaurantsRepaymentsName" placeholder='Name' autocomplete="off"></td>
+          <td> <input type='number' name="restaurantsRepaymentsAmount" placeholder='Amount'></td>
+          <td>
+              <select id='currencyList'  name="restaurantsRepaymentsCurrency"> <option value='INR' selected='selected' label='Indian rupee'>INR</option> <option value='IDR' label='Indonesian rupiah'>IDR</option> <option value='ILS' label='Israeli new shekel'>ILS</option> <option value='INR' label='Indian rupee'>INR</option> <option value='LKR' label='Sri Lankan rupee'>LKR</option> <option value='MRU' label='Mauritanian ouguiya'>MRU</option> <option value='MUR' label='Mauritian rupee'>MUR</option> <option value='MVR' label='Maldivian rufiyaa'>MVR</option> <option value='NZD' label='New Zealand dollar'>NZD</option> <option value='SGD' label='Singapore dollar'>SGD</option> <option value='USD' label='United States dollar'>USD</option> </select>
+          </td>
+        <td><input type='date'  name="restaurantsRepaymentsDate"></td>
+        </tr>
+      
+    </table>
+  </div>
+ </div>
+
+  <div class="savings"> 
+    <h2> Savings </h2>
+
+                             <!--------------------------------- LIC Field ------------------------->
+  
+                         
+        <table class="table table-striped table-responsive-stack">
+            <tr> 
+                <td><label>LIC &nbsp; &nbsp; &nbsp; </label></td>
+                <td><input type="text" name="licName" placeholder="Name" autocomplete="off"></input></td>
+                <td> <input type="number" name="licAmount" placeholder="Amount"></input> </td>
+                <td><select name="licCurrency" class="currency-selector">
+                        <option value='INR' selected='selected'selected>Select Currency</option>
+                        <option data-symbol="₹">INR</option>
+                        <option data-symbol="$">USD</option>
+                        <option data-symbol="€">EUR</option>
+                        <option data-symbol="£" >GBP</option>
+                        <option data-symbol="¥">JPY</option>
+                        <option data-symbol="$">CAD</option>
+                        <option data-symbol="$">AUD</option>
+                        <option data-symbol="₹">INR</option>
+                    </select> </td>
+            
+                <td><input name="licDate" type="date"></td>
+            </tr>
+        </table>
+   
+    <br>
+                            <!--------------------------------- FD Field ------------------------->       
+   
+        <table class="table table-striped table-responsive-stack">
+            <tr>
+                <td><label>FD &nbsp; &nbsp; &nbsp;</label></td>
+                <td><input type="text" name="fdName" placeholder="Name" autocomplete="off"></input></td>
+                <td> <input type="number" name="fdAmount" placeholder="Amount"></input> </td>
+                <td> <select name="fdCurrency" class="currency-selector">
+                        <option value='INR' selected='selected'selected>Select Currency</option>
+                        <option data-symbol="₹">INR</option>
+                        <option data-symbol="$">USD</option>
+                        <option data-symbol="€">EUR</option>
+                        <option data-symbol="£" >GBP</option>
+                        <option data-symbol="¥">JPY</option>
+                        <option data-symbol="$">CAD</option>
+                        <option data-symbol="$">AUD</option>
+                        <option data-symbol="₹">INR</option>
+                     </select> </td>
+             
+                <td><input name="fdDate" type="date"></td>
+            </tr>
+        </table>
+   
+    <br>
+                        <!--------------------------------- RD Field ------------------------->
+
+   
+
+        <table class="table table-striped table-responsive-stack">
+            <tr>
+                <td><label>RD &nbsp; &nbsp; &nbsp;</label></td>
+                <td><input type="text" name="rdName" placeholder="Name" autocomplete="off"></input></td>
+                <td> <input type="number" name="rdAmount" placeholder="Amount"></input> </td>
+                <td> <select name="rdCurrency" class="currency-selector">
+                    <option value='INR' selected='selected'selected>Select Currency</option>
+                    <option data-symbol="₹">INR</option>
+                    <option data-symbol="$">USD</option>
+                    <option data-symbol="€">EUR</option>
+                    <option data-symbol="£" >GBP</option>
+                    <option data-symbol="¥">JPY</option>
+                    <option data-symbol="$">CAD</option>
+                    <option data-symbol="$">AUD</option>
+                    <option data-symbol="₹">INR</option>
+                    </select> </td>
+             
+                <td><input  name="rdDate" type="date"></td>
+            </tr>
+        </table> 
+    
+    <br>
+                     <!--------------------------------- Others Field ------------------------->
+    
+        <table class="table table-striped table-responsive-stack">
+            <tr>
+                <td><label>Others</label></td>
+                <td><input type="text" name="othersSavingsName" placeholder="Name" autocomplete="off"></input></td>
+                <td> <input type="number" name="othersSavingsAmount"  placeholder="Amount"></input> </td>
+                <td> <select name="othersSavingsCurrency"  class="currency-selector">
+                        <option value='INR' selected='selected'selected>Select Currency</option>
+                        <option data-symbol="₹">INR</option>
+                        <option data-symbol="$">USD</option>
+                        <option data-symbol="€">EUR</option>
+                        <option data-symbol="£" >GBP</option>
+                        <option data-symbol="¥">JPY</option>
+                        <option data-symbol="$">CAD</option>
+                        <option data-symbol="$">AUD</option>
+                        <option data-symbol="₹">INR</option>
+                     </select> </td>
+             
+                <td><input name="othersSavingsDate"  type="date"></td>
+            </tr>
+        </table>
+        <button  name="submit" type="submit" class="btn btn-danger btn-lg btn-block"  >Submit</button>
+    </form>
+   
+</body>
+</html>

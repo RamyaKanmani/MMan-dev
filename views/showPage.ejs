@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Show page</title>
+</head>
+<body>
+
+    <% if(salaryAmount === "" && othersamount === "" && loanRepaymentsAmount === "" && rentRepaymentsAmount === "" && groceriesAmount === "" &&  billPaymentAmount === "" && MedicinesRepaymentsAmount === "" && travelExpensesAmount === "" && travelExpensesAmount === "" && restaurantsRepaymentsAmount === ""  && licAmount === ""  && fdAmount === ""  && rdAmount === "" && othersSavingsAmount === ""){ %> 
+        <h1>Please enter the form</h1>
+    <% } %> 
+ 
+  <% if(salaryAmount !== ""){ %> 
+    <%  if(salaryName !=="" && salaryDate !== ""){ %>
+        <h1>Salary for <%= salaryName %> is <%= salaryAmount %>  <%= salaryCurrency %> received on <%= salaryDate %>  </h1>
+    <% }  else if(salaryDate !== ""){ %>
+        <h1>Salary is <%= salaryName %>  <%= salaryAmount %>  <%= salaryCurrency %> received on <%= salaryDate %>  </h1>
+    <% } else if(salaryName !== ""){ %>
+        <h1>Salary for <%= salaryName %> is <%= salaryAmount %>  <%= salaryCurrency %> received on <%= today %>  </h1>
+    <% }else{ %>
+        <h1>Salary is <%= salaryName %>  <%= salaryAmount %>  <%= salaryCurrency %> received on <%= today %>  </h1> 
+    <% } %>
+  <% } %> 
+
+  <% if(othersamount !== ""){ %> 
+    <%  if(othersname !== "" && othersdate !== ""){ %>
+        <h1>Other income for <%= othersname %> is <%= othersamount %>  <%= otherscurrency %> paid on <%= othersdate %>  </h1>
+    <% }  else if(othersdate !== ""){ %>
+        <h1>Other income is <%= othersname %>  <%= othersamount %>  <%= otherscurrency %> paid on <%= othersdate %>  </h1>
+    <% } else if(othersname !== ""){ %>
+        <h1>Other income for <%= othersname %> is <%= othersamount %>  <%= otherscurrency %> <%= today %>  </h1>
+    <% }else{ %>
+        <h1>Other income is <%= othersamount %>  <%= otherscurrency %>  <%= today %>  </h1> 
+    <% } %>
+  <% } %> 
+  
+  <% if(loanRepaymentsAmount !== ""){ %> 
+    <%  if(loanRepaymentsName !== "" && loanRepaymentsDate !== ""){ %>
+        <h1>Your expense on <%= loanRepaymentsName %> is <%= loanRepaymentsAmount %> <%= loanRepaymentsCurrency %> on <%= loanRepaymentsDate %> </h1>
+      <% }  else if(loanRepaymentsDate !== ""){ %>
+        <h1>Your expense on loan is <%= loanRepaymentsAmount %> <%= loanRepaymentsCurrency %> on <%= loanRepaymentsDate %> </h1>
+    <% } else if(loanRepaymentsName !== ""){ %>
+        <h1>Your expense on <%= loanRepaymentsName %> is <%= loanRepaymentsAmount %> <%= loanRepaymentsCurrency %> on <%= today %> </h1>
+    <% }else{ %>
+        <h1>Your expense on loan is <%= loanRepaymentsAmount %> <%= loanRepaymentsCurrency %> on <%= today %> </h1>
+    <% } %>
+  <% } %> 
+ 
+
+  <% if(rentRepaymentsAmount !== ""){ %> 
+    <%  if(rentRepaymentsName !== "" && rentRepaymentsDate !== ""){ %>
+        <h1>Your expense on <%= rentRepaymentsName %> is <%= rentRepaymentsAmount %> <%= rentRepaymentsCurrency %> on <%= rentRepaymentsDate %> </h1>
+      <% }  else if(rentRepaymentsDate !== ""){ %>
+        <h1>Your expense on rent is <%= rentRepaymentsAmount %> <%= rentRepaymentsCurrency %> on <%= rentRepaymentsDate %> </h1>
+    <% } else if(rentRepaymentsName !== ""){ %>
+        <h1>Your expense on <%= rentRepaymentsName %> is <%= rentRepaymentsAmount %> <%= rentRepaymentsCurrency %> on <%= today %> </h1>
+    <% }else{ %>
+        <h1>Your expense on rent is <%= rentRepaymentsAmount %> <%= rentRepaymentsCurrency %> on <%= today %> </h1>
+    <% } %>
+  <% } %> 
+
+  <% if(groceriesAmount !== ""){ %> 
+    <%  if(groceriesName  !== "" && groceriesDate !== ""){ %>
+        <h1>Your expense on <%= groceriesName %> is <%= groceriesAmount %> <%= groceriesCurrency %> on <%= groceriesDate %> </h1>
+      <% }  else if(groceriesDate !== ""){ %>
+        <h1>Your expense on groceries are <%= groceriesAmount %> <%= groceriesCurrency %> on <%= groceriesDate %> </h1>
+    <% } else if(groceriesName !== ""){ %>
+        <h1>Your expense on <%= groceriesName %> is <%= groceriesAmount %> <%= groceriesCurrency %> on <%= today %> </h1>
+    <% }else{ %>
+        <h1>Your expense on groceries are <%= groceriesAmount %> <%= groceriesCurrency %> on <%= today %> </h1>
+    <% } %>
+  <% } %>
+
+  <% if(billPaymentAmount !== ""){ %> 
+    <%  if(billRepaymentsName  !== "" && billPaymentDate !== ""){ %>
+        <h1>Your expense on <%= billRepaymentsName %> is <%= billPaymentAmount %> <%= billPaymentCurrency %> on <%= billPaymentDate %> </h1>
+      <% }  else if(billPaymentDate !== ""){ %>
+        <h1>Your expense on bills are <%= billPaymentAmount %> <%= billPaymentCurrency %> on <%= billPaymentDate %> </h1>
+    <% } else if(billRepaymentsName !== ""){ %>
+        <h1>Your expense on <%= billRepaymentsName %> is <%= billPaymentAmount %> <%= billPaymentCurrency %> on <%= today %> </h1>
+    <% }else{ %>
+        <h1>Your expense on bills are <%= billPaymentAmount %> <%= billPaymentCurrency %> on <%= today %> </h1>
+    <% } %>
+  <% } %>
+
+  <% if(MedicinesRepaymentsAmount !== ""){ %> 
+    <%  if(MedicinesRepaymentsName  !== "" && medicinesPaymentDate !== ""){ %>
+        <h1>Your expense on <%= MedicinesRepaymentsName %> is <%= MedicinesRepaymentsAmount %> <%= MedicinesPaymentCurrency %> on <%= medicinesPaymentDate %> </h1>
+      <% }  else if(medicinesPaymentDate !== ""){ %>
+        <h1>Your expense on medicines are <%= MedicinesRepaymentsAmount %> <%= MedicinesPaymentCurrency %> on <%= medicinesPaymentDate %> </h1>
+    <% } else if(MedicinesRepaymentsName !== ""){ %>
+        <h1>Your expense on <%= MedicinesRepaymentsName %> is <%= MedicinesRepaymentsAmount %> <%= MedicinesPaymentCurrency %> on <%= today %> </h1>
+    <% }else{ %>
+        <h1>Your expense on medicines are <%= MedicinesRepaymentsAmount %> <%= MedicinesPaymentCurrency %> on <%= today %> </h1>
+    <% } %>
+  <% } %>
+
+  <% if(travelExpensesAmount !== ""){ %> 
+    <%  if(travelExpensesName  !== "" && travelExpensesDate !== ""){ %>
+        <h1>Your expense on <%= travelExpensesName %> is <%= travelExpensesAmount %> <%= travelExpensesCurrency %> on <%= travelExpensesDate %> </h1>
+      <% }  else if(travelExpensesDate !== ""){ %>
+        <h1>Your expense on travel is <%= travelExpensesAmount %> <%= travelExpensesCurrency %> on <%= travelExpensesDate %> </h1>
+    <% } else if(travelExpensesName !== ""){ %>
+        <h1>Your expense on <%= travelExpensesName %> is <%= travelExpensesAmount %> <%= travelExpensesCurrency %> on <%= today %> </h1>
+    <% }else{ %>
+        <h1>Your expense on travel is <%= travelExpensesAmount %> <%= travelExpensesCurrency %> on <%= today %> </h1>
+    <% } %>
+  <% } %>
+
+  <% if(restaurantsRepaymentsAmount !== ""){ %> 
+    <%  if(restaurantsRepaymentsName  !== "" && restaurantsRepaymentsDate !== ""){ %>
+        <h1>Your expense on <%= restaurantsRepaymentsName %> is <%= restaurantsRepaymentsAmount %> <%= restaurantsRepaymentsCurrency %> on <%= restaurantsRepaymentsDate %> </h1>
+      <% }  else if(restaurantsRepaymentsDate !== ""){ %>
+        <h1>Your expense on restaurants are <%= restaurantsRepaymentsAmount %> <%= restaurantsRepaymentsCurrency %> on <%= restaurantsRepaymentsDate %> </h1>
+    <% } else if(restaurantsRepaymentsName !== ""){ %>
+        <h1>Your expense on <%= restaurantsRepaymentsName %> is <%= restaurantsRepaymentsAmount %> <%= restaurantsRepaymentsCurrency %> on <%= today %> </h1>
+    <% }else{ %>
+        <h1>Your expense on restaurants are <%= restaurantsRepaymentsAmount %> <%= restaurantsRepaymentsCurrency %> on <%= today %> </h1>
+    <% } %>
+  <% } %>
+  
+   
+
+  <% if(licAmount !== ""){ %> 
+    <%  if(licName !== "" && licDate !== ""){ %>
+        <h1>Your Investment on <%= licName %> is <%= licAmount %>  <%= licCurrency %> paid on <%= licDate %>  </h1>
+    <% }  else if(licDate !== ""){ %>
+        <h1>Your Investment on LIC is <%= licName %>  <%= licAmount %>  <%= licCurrency %> paid on <%= licDate %>  </h1>
+    <% } else if(licName !== ""){ %>
+        <h1>Your Investment on LIC  is <%= licAmount %>  <%= licCurrency %> paid on <%= today %> </h1>
+    <% }else{ %>
+        <h1>Your Investment on LIC is <%= licName %>  <%= licAmount %>  <%= licCurrency %> paid on <%= today %> </h1> 
+    <% } %>
+<% } %>
+
+<% if(fdAmount !== ""){ %> 
+    <%  if(fdName !== "" && fdDate !== ""){ %>
+        <h1>Your Investment on  <%= fdName %> is <%= fdAmount %>  <%= fdCurrency %> paid on <%= fdDate %>  </h1>
+    <% }  else if(fdDate !== ""){ %>
+        <h1>Your Investment on FD is <%= fdName %>  <%= fdAmount %>  <%= fdCurrency %> paid on <%= fdDate %>  </h1>
+    <% } else if(fdName !== ""){ %>
+        <h1>Your Investment on  <%= fdName %> is <%= fdAmount %>  <%= fdCurrency %> paid on <%= today %> </h1>
+    <% }else{ %>
+        <h1>Your Investment on FD is <%= fdName %>  <%= fdAmount %>  <%= fdCurrency %> paid on <%= today %> </h1> 
+    <% } %>
+<% } %>
+
+<% if(rdAmount !== ""){ %> 
+    <%  if(rdName !== "" && rdDate !== ""){ %>
+        <h1>Your Investment on  <%= rdName %> is <%= rdAmount %>  <%= rdCurrency %> paid on <%= rdDate %>  </h1>
+    <% }  else if(rdDate !== ""){ %>
+        <h1>Your Investment on RD is <%= rdName %>  <%= rdAmount %>  <%= rdCurrency %> paid on <%= rdDate %>  </h1>
+    <% } else if(rdName !== ""){ %>
+        <h1>Your Investment on  <%= rdName %> is <%= rdAmount %>  <%= rdCurrency %> paid on <%= today %> </h1>
+    <% }else{ %>
+        <h1>Your Investment on RD is<%= rdName %>  <%= rdAmount %>  <%= rdCurrency %> paid on <%= today %> </h1> 
+    <% } %>
+<% } %>
+
+<% if(othersSavingsAmount !== ""){ %> 
+    <%  if(othersSavingsName !== "" && othersSavingsDate !== ""){ %>
+        <h1>Your other Investment on  <%= othersSavingsName %> is <%= othersSavingsAmount %>  <%= othersSavingsCurrency %> paid on <%= othersSavingsDate %>  </h1>
+    <% }  else if(othersSavingsDate !== ""){ %>
+        <h1>Your other Investment is <%= othersSavingsName %>  <%= othersSavingsAmount %>  <%= othersSavingsCurrency %> paid on <%= othersSavingsDate %>  </h1>
+    <% } else if(othersSavingsName !== ""){ %>
+        <h1>Your other Investment on  <%= othersSavingsName %> is <%= othersSavingsAmount %>  <%= othersSavingsCurrency %> paid on <%= today %> </h1>
+    <% }else{ %>
+        <h1>Your other Investment is <%= othersSavingsName %>  <%= othersSavingsAmount %>  <%= othersSavingsCurrency %> paid on <%= today %> </h1> 
+    <% } %>
+<% } %>
+
+</body>
+</html>
